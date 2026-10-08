@@ -108,9 +108,10 @@ button {
 
 .avatar-wrap {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: fit-content;
   padding: 4px;
-  margin-bottom: 18px;
+  margin: 0 auto 4px;
   border-radius: 50%;
   background: linear-gradient(135deg, #fff, #ffbfd0);
   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.08);
@@ -134,10 +135,11 @@ button {
 }
 
 .titulo-badge {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
   gap: 6px;
-  margin-bottom: 8px;
+  margin: 4px auto 8px;
   padding: 5px 10px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 999px;
