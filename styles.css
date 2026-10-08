@@ -1,0 +1,435 @@
+:root {
+  color-scheme: dark;
+  --ink: #fffaf7;
+  --muted: #f4d4dd;
+  --highlight: #ffb6c8;
+  --highlight-strong: #ffd6e5;
+  --shadow: rgba(17, 0, 10, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: clamp(16px, 3vw, 40px);
+  display: grid;
+  place-items: center;
+  overflow-x: hidden;
+  color: var(--ink);
+  font-family: "Segoe UI", Georgia, serif;
+  background:
+    linear-gradient(90deg, rgba(17, 1, 5, 0.86) 0%, rgba(34, 2, 8, 0.66) 42%, rgba(24, 1, 5, 0.42) 100%),
+    linear-gradient(135deg, rgba(75, 0, 10, 0.28), rgba(8, 0, 2, 0.28)),
+    url("assets/andriuw.png") center / cover no-repeat fixed;
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org" width="24" height="24" style="font-size:16px"><text y="16">✦</text></svg>'),
+    auto;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(0deg, rgba(15, 0, 4, 0.22), transparent 35%);
+}
+
+a,
+.link-btn,
+button {
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org" width="24" height="24" style="font-size:16px"><text y="16">✧</text></svg>'),
+    pointer !important;
+}
+
+.escenario {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: min(100%, 1440px);
+  min-height: min(820px, calc(100vh - 2 * clamp(16px, 3vw, 40px)));
+}
+
+.tarjeta {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: clamp(26px, 5vw, 42px);
+  border-radius: 32px;
+  text-align: center;
+  background:
+    linear-gradient(155deg, rgba(35, 40, 55, 0.9), rgba(14, 17, 27, 0.86)),
+    rgba(18, 24, 36, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  overflow: hidden;
+  animation: entradaTarjeta 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.tarjeta::before,
+.tarjeta::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.tarjeta::before {
+  width: 240px;
+  height: 240px;
+  top: -120px;
+  right: -60px;
+  background: rgba(255, 182, 200, 0.11);
+  filter: blur(10px);
+}
+
+.tarjeta::after {
+  width: 180px;
+  height: 180px;
+  bottom: -100px;
+  left: -40px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.avatar-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 4px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff, #ffbfd0);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.08);
+}
+
+.avatar {
+  position: relative;
+  display: block;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.avatar-wrap:hover .avatar {
+  transform: scale(1.06) rotate(3deg);
+  filter: saturate(1.1);
+}
+
+.titulo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  color: #ffdfe9;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  animation: entradaElemento 0.6s 0.15s both;
+}
+
+.avatar-wrap {
+  animation: entradaElemento 0.7s 0.25s both;
+}
+
+h1 {
+  position: relative;
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.35);
+  animation: entradaElemento 0.7s 0.35s both;
+}
+
+.descripcion {
+  position: relative;
+  max-width: 350px;
+  margin: 12px auto 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  animation: entradaElemento 0.7s 0.45s both;
+}
+
+.enlaces {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  margin-top: 30px;
+  animation: entradaElemento 0.7s 0.55s both;
+}
+
+@keyframes entradaTarjeta {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes entradaElemento {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.link-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+  padding: 14px 18px 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  color: var(--ink);
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.link-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: inherit;
+  transform: scale(1.02);
+  filter: brightness(0.55) saturate(1.2);
+}
+
+.link-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(9, 4, 9, 0.82), rgba(9, 4, 9, 0.35));
+}
+
+.link-btn:hover,
+.link-btn:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28);
+  outline: none;
+}
+
+.link-btn:hover::before,
+.link-btn:focus-visible::before {
+  filter: brightness(0.7) saturate(1.3);
+}
+
+.link-btn .icono {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  font-size: 1.2rem;
+}
+
+.link-btn .texto {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-left: 14px;
+}
+
+.link-btn .nombre {
+  font-size: 0.97rem;
+}
+
+.link-btn .etiqueta {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.link-btn:focus-visible,
+#btnMusica:focus-visible {
+  outline: 2px solid var(--highlight-strong);
+  outline-offset: 3px;
+}
+
+.contenedor-brillos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.brillo {
+  position: absolute;
+  color: #fffdec;
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(210, 235, 255, 0.7);
+  opacity: 0;
+  animation: flotarYBrillar 5s infinite ease-in-out;
+}
+
+.b1 {
+  left: 10%;
+  top: 15%;
+  animation-delay: 0s;
+  font-size: 26px;
+}
+.b2 {
+  left: 85%;
+  top: 25%;
+  animation-delay: 1.2s;
+  font-size: 18px;
+}
+.b3 {
+  left: 75%;
+  top: 75%;
+  animation-delay: 2.5s;
+  font-size: 28px;
+}
+.b4 {
+  left: 20%;
+  top: 70%;
+  animation-delay: 0.7s;
+  font-size: 22px;
+}
+.b5 {
+  left: 50%;
+  top: 10%;
+  animation-delay: 3.4s;
+  font-size: 16px;
+}
+
+@keyframes flotarYBrillar {
+  0% {
+    transform: translateY(20px) scale(0.6) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-30px) scale(1.1) rotate(120deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .tarjeta {
+    max-width: min(500px, 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-position: 61% center;
+    background-attachment: scroll;
+  }
+}
+
+.reproductor-musica {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100;
+}
+
+#btnMusica {
+  padding: 11px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  color: var(--ink);
+  font-family: "Segoe UI", Georgia, serif;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#btnMusica:hover,
+#btnMusica:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 12px 26px rgba(255, 182, 200, 0.18);
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+  }
+
+  .tarjeta {
+    border-radius: 24px;
+  }
+
+  .link-btn {
+    min-height: 60px;
+    padding: 12px 14px;
+  }
+
+  .link-btn .texto {
+    padding-left: 10px;
+  }
+
+  .reproductor-musica {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  #btnMusica {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+}
