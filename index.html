@@ -1,141 +1,48 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Rincón Angelical ✦</title>
-    <style>
-        /* Fondo general y fuentes */
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f3f7ff 0%, #fff5f8 100%);
-            font-family: 'Georgia', serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-            color: #726b75;
-        }
-
-        /* Contenedor principal estilo carta flotante */
-        .tarjeta {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(218, 231, 253, 0.5), 0 1px 3px rgba(255,255,255,0.8) inset;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            text-align: center;
-            max-width: 350px;
-            width: 90%;
-            z-index: 10;
-        }
-
-        .avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 3px solid #fff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            font-size: 24px;
-            margin: 10px 0;
-            font-weight: normal;
-            letter-spacing: 1px;
-            text-shadow: 0 0 10px #fff, 0 0 20px #eef5ff;
-        }
-
-        /* Botones / Enlaces */
-        .enlaces {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 25px;
-        }
-
-        .link-btn {
-            background: rgba(255, 255, 255, 0.9);
-            color: #8c8290;
-            text-decoration: none;
-            padding: 14px;
-            border-radius: 14px;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(230, 235, 245, 0.8);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        }
-
-        .link-btn:hover {
-            transform: translateY(-2px);
-            background: #fff;
-            color: #bfa38a;
-            box-shadow: 0 5px 15px rgba(234, 219, 240, 0.6);
-        }
-
-        /* ---- ANIMACIÓN DE BRILLOS ---- */
-        .contenedor-brillos {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .brillo {
-            position: absolute;
-            color: #fffdec;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(210, 235, 255, 0.7);
-            opacity: 0;
-            animation: flotarYBrillar 5s infinite ease-in-out;
-        }
-
-        /* Posiciones variadas */
-        .b1 { left: 10%; top: 15%; animation-delay: 0s; font-size: 26px; }
-        .b2 { left: 85%; top: 25%; animation-delay: 1.2s; font-size: 18px; }
-        .b3 { left: 75%; top: 75%; animation-delay: 2.5s; font-size: 28px; }
-        .b4 { left: 20%; top: 70%; animation-delay: 0.7s; font-size: 22px; }
-        .b5 { left: 50%; top: 10%; animation-delay: 3.4s; font-size: 16px; }
-
-        @keyframes flotarYBrillar {
-            0% { transform: translateY(20px) scale(0.6) rotate(0deg); opacity: 0; }
-            50% { opacity: 0.9; }
-            100% { transform: translateY(-30px) scale(1.1) rotate(120deg); opacity: 0; }
-        }
-    </style>
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina de DonAndriuw</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <!-- Capa de los Brillos -->
     <div class="contenedor-brillos">
-        <div class="brillo b1">✦</div>
-        <div class="brillo b2">✧</div>
-        <div class="brillo b3">✦</div>
-        <div class="brillo b4">✧</div>
-        <div class="brillo b5">✦</div>
+      <div class="brillo b1">✦</div>
+      <div class="brillo b2">✧</div>
+      <div class="brillo b3">✦</div>
+      <div class="brillo b4">✧</div>
+      <div class="brillo b5">✦</div>
     </div>
 
-    <!-- Tu Tarjeta -->
-    <div class="tarjeta">
-        <!-- Puedes cambiar este enlace por el de una foto tuya de Pinterest o Discord -->
-        <img class="avatar" src="https://pinimg.com" alt="Angelcore">
-        <h1>@TuUsuario</h1>
-        <p style="font-size: 14px; font-style: italic;">"Welcome to heaven"</p>
-        
-        <div class="enlaces">
-            <a href="https://instagram.com" target="_blank" class="link-btn">Instagram ✧</a>
-            <a href="https://pinterest.com" target="_blank" class="link-btn">Pinterest ✦</a>
-            <a href="#" class="link-btn">Mi Playlist Secreta ✧</a>
+    <main class="escenario">
+      <section class="tarjeta" aria-label="Perfil de DonAndriuw">
+        <span class="titulo-badge">Mi mundo en línea</span>
+        <div class="avatar-wrap">
+          <img class="avatar" src="assets/avatar.png" alt="DonAndriuw" />
         </div>
+        <h1>DonAndriuw</h1>
+        <p class="descripcion">
+          Youtuber, Editor, Loremaker y intento de Tiktoker, unete a mi refugio, unete a los pinguinos, se un pinguino.
+        </p>
+
+        <nav class="enlaces" id="caja-redes" aria-label="Redes sociales"></nav>
+      </section>
+    </main>
+    <!-- Reproductor de mÃºsica angelical -->
+    <div class="reproductor-musica">
+      <!-- Reemplaza el link de abajo por el enlace directo de tu canciÃ³n en formato .mp3 -->
+      <audio id="miMusica" loop autoplay playsinline>
+        <source
+          src="https://www.dropbox.com/scl/fi/cc4m3tkdh0eao4vqo7td8/Great-Fairy-Fountain.mp3?rlkey=6babqjobst5j9lxaflimfao3w&st=sjp9w08i&dl=1"
+          type="audio/mpeg"
+        />
+        Tu navegador no soporta audio.
+      </audio>
+      <button onclick="controlarMusica()" id="btnMusica">✨ Play Music</button>
     </div>
 
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
